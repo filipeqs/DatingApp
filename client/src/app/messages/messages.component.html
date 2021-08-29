@@ -45,7 +45,7 @@
             routerLink="{{
                 container === 'Outbox'
                     ? '/members/' + message.recipientUsername
-                    : '/members/' + messages.senderUsername
+                    : '/members/' + message.senderUsername
             }}"
             [queryParams]="{ tab: 3 }"
         >
