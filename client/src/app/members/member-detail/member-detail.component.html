@@ -7,6 +7,9 @@
                 alt="{{ member.knownAs }}"
             />
             <div class="card-body">
+                <div class="mb-2" *ngIf="(presence.onlineUsers$ | async).includes(member.username)">
+                    <i class="fa fa-user-circle text-success"></i> Online now
+                </div>
                 <div>
                     <strong>Location:</strong>
                     <p>{{ member.city }}, {{ member.country }}</p>
@@ -53,10 +56,7 @@
                 ></ngx-gallery>
             </tab>
             <tab heading="Messages" (selectTab)="onTabActivated($event)">
-                <app-member-messages
-                    [username]="member.username"
-                    [messages]="messages"
-                ></app-member-messages>
+                <app-member-messages [username]="member.username"></app-member-messages>
             </tab>
         </tabset>
     </div>
