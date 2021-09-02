@@ -36,7 +36,7 @@ Run the api
 Run the clent
 
 ```bash
-$ npm serve
+$ ng serve
 ```
 
 ## Features
